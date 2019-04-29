@@ -4,18 +4,26 @@
           <h1 class="mt-md-0 mt-2"> <a routerLink="/home"><span class="fa fa-map-signs"></span> Laitayo<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Tours</a></h1>
         </div>
     <!-- navigation bar here -->
-    <nav class="py-md-4 py-3 d-lg-flex">
-      
-
+    <nav class="py-md-4 py-3 d-lg-flex" role="navigation">
       <label for="drop" class="toggle"><span class="fa fa-bars"></span></label>
 			<input type="checkbox" id="drop" />
 			<ul class="menu ml-auto mt-1">
 				<li class=""><a routerLink="/home" routerLinkActive="active">Home</a></li>
-				<li class=""><a routerLink="/ngorongoro" routerLinkActive="active">Destinations</a></li>
+        <li class=""><a routerLink="#" routerLinkActive="active">Destinations</a>
+            <ul class="dropdown" id="dropsnav">
+              <h4>Destinations</h4>
+              <li class=""><a routerLink="/ngorongoro">Ngorongoro Conservation Area</a></li>
+              <li class=""><a routerLink="/serengeti" routerLinkActive="active">Serengeti National Park</a></li>
+              <li class=""><a routerLink="/manyara" routerLinkActive="active">Lake Manyara National Park</a></li>
+              <li class=""><a routerLink="/tara" routerLinkActive="active">Tarangire National Park </a></li>
+              <li class=""><a routerLink="/kili" routerLinkActive="active">Mount Kilimanjaro </a></li>
+              <li class=""><a routerLink="/zanzibar" routerLinkActive="active">Zanzibar</a></li>
+            </ul>
+        </li>
 				<li class=""><a routerLink="/serengeti" routerLinkActive="active">Safaris</a></li>
 				<li class=""><a routerLink="/kili" routerLinkActive="active">Climbing</a></li>
         <li class=""><a routerLink="/tara" routerLinkActive="active">Accomodation</a></li>
-        <li class=""><a routerLink="/manyara" routerLinkActive="active">Travel Info</a></li>
+        <li class=""><a routerLink="/manyara" routerLinkActive="active">Travel Guide</a></li>
         <li class=""><a routerLink="/zanzibar" routerLinkActive="active">About Us</a></li>
         <li class=""><a routerLink="/contact" routerLinkActive="active">Contacts</a></li>
 				<li class="booking"><a routerLink="#" routerLinkActive="active">Book Now</a></li>
