@@ -1,1 +1,16 @@
 @import '../app.component.css';
+
+/* article {  
+    -webkit-clip-path: polygon(0 0, 42% 0, 76% 100%, 0% 100%);
+    clip-path: polygon(0 0, 42% 0, 76% 100%, 0% 100%);
+} */
+
+.banner_inner_kili {
+    background: url(../../assets/lait_img/mt_kilimanjaro4.jpg) no-repeat center;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    -moz-background-size: cover;
+	min-height: 300px;
+}

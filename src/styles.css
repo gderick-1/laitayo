@@ -405,6 +405,23 @@ li > a:only-child:after { content: ''; }
     -moz-background-size: cover;
 }
 
+.banner-top4 {
+    background: url(./assets/lait_img/1540313505-Olduvai\ Gorge\ Museum.jpg) no-repeat center;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    -moz-background-size: cover;
+}
+
+.banner-top5 {
+    background: url(./assets/lait_img/SerengetiBalloonSafaris-39.jpg) no-repeat center;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    -moz-background-size: cover;
+}
 .w3layouts-banner-info {
     padding-top: 18em;
     max-width: 800px;
@@ -441,7 +458,9 @@ li > a:only-child:after { content: ''; }
 .banner-top,
 .banner-top1,
 .banner-top2,
-.banner-top3 {
+.banner-top3,
+.banner-top4,
+.banner-top5 {
     min-height: 750px;
 }
 .overlay {
@@ -711,7 +730,7 @@ li.linkedin a  {
 /*-- text --*/
 
 .text-content {
-    background: url(./assets/lait_img/grayrhino.jpg) no-repeat center;
+    background: url(./assets/lait_img/stonetown.jpg) no-repeat center;
     background-size: cover;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -994,6 +1013,7 @@ a.move-top span{
     -moz-background-size: cover;
 	min-height: 300px;
 }
+
 .banner_inner_overlay{
     background: rgba(0, 0, 0, 0.5);
 	min-height: 300px;

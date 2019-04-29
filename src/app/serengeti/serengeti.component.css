@@ -1,1 +1,11 @@
 @import '../app.component.css';
+
+.banner_inner_sere {
+    background: url(../../assets/lait_img/zebra_balloon.jpg) no-repeat center;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    -moz-background-size: cover;
+	min-height: 300px;
+}
