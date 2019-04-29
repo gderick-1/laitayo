@@ -406,7 +406,7 @@ li > a:only-child:after { content: ''; }
 }
 
 .banner-top4 {
-    background: url(./assets/lait_img/1540313505-Olduvai\ Gorge\ Museum.jpg) no-repeat center;
+    background: url(./assets/lait_img/olduvaigorgemuseum.jpg) no-repeat center;
     background-size: cover;
     -webkit-background-size: cover;
     -moz-background-size: cover;
