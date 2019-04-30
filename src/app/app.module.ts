@@ -29,7 +29,7 @@ import { HomeComponent } from './home/home.component';
     BrowserModule,
     AppRoutingModule
     // AgmCoreModule.forRoot({
-    //   apiKey: ' AIzaSyAa2cAuxqGVR6FbfaaRh7JNIBXs5LD3ZE8 '
+    //   apiKey: ''
     // })
   ],
   providers: [],
