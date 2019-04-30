@@ -10,19 +10,6 @@
 			<ul class="menu ml-auto mt-1">
 				<li class=""><a routerLink="/home" routerLinkActive="active">Home</a></li>
         <li><a href="#lait_dest" data-toggle="collapse" routerLinkActive="active" aria-expanded="true">Destinations<span class="caret"></span></a></li>
-        <div class="row">
-          <div class="collapse col-md-6" id="lait_dest">
-            <ul>
-              <h3 class="mt-lg-3">Destinations</h3><hr>
-              <li class=""><a routerLink="/ngorongoro">Ngorongoro Conservation Area</a></li> 
-              <li class=""><a routerLink="/serengeti" routerLinkActive="active">Serengeti National Park</a></li>
-              <li class=""><a routerLink="/manyara" routerLinkActive="active">Lake Manyara National Park</a></li>
-              <li class=""><a routerLink="/tara" routerLinkActive="active">Tarangire National Park </a></li>
-              <li class=""><a routerLink="/kili" routerLinkActive="active">Mount Kilimanjaro </a></li>
-              <li class=""><a routerLink="/zanzibar" routerLinkActive="active">Zanzibar</a></li>
-            </ul>
-          </div>
-        </div>
 				<li class=""><a routerLink="#" routerLinkActive="active">Safaris</a></li>
 				<li class=""><a routerLink="#" routerLinkActive="active">Climbing</a></li>
         <li class=""><a routerLink="#" routerLinkActive="active">Accomodation</a></li>
@@ -32,6 +19,19 @@
 				<li class="booking"><a routerLink="#" routerLinkActive="active">Book Now</a></li>
 			</ul>
     </nav>
+    <div class="row">
+      <div class="collapse col-md-6" id="lait_dest">
+        <ul>
+          <h3 class="mt-lg-3">Destinations</h3><hr>
+          <li class=""><a routerLink="/ngorongoro">Ngorongoro Conservation Area</a></li> 
+          <li class=""><a routerLink="/serengeti" routerLinkActive="active">Serengeti National Park</a></li>
+          <li class=""><a routerLink="/manyara" routerLinkActive="active">Lake Manyara National Park</a></li>
+          <li class=""><a routerLink="/tara" routerLinkActive="active">Tarangire National Park </a></li>
+          <li class=""><a routerLink="/kili" routerLinkActive="active">Mount Kilimanjaro </a></li>
+          <li class=""><a routerLink="/zanzibar" routerLinkActive="active">Zanzibar</a></li>
+        </ul>
+      </div>
+    </div>
   </div>
 </header>
 <router-outlet></router-outlet>
