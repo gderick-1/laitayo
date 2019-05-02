@@ -2,6 +2,8 @@
 #lait_dest {
     margin: 0;
     padding: 0;
+    width: 100%;
+    height: 400px;
     background-color: #ffa1ef;
 }
 
@@ -11,7 +13,7 @@
     line-height: 0;
     margin: 0 auto;
     padding: 0;
-    overflow: hidden;
+    /* overflow: hidden; */
     white-space: nowrap;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
