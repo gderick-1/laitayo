@@ -12,6 +12,8 @@ import { ZanzibarComponent } from './zanzibar/zanzibar.component';
 import { KilimanjaroComponent } from './kilimanjaro/kilimanjaro.component';
 import { ContactComponent } from './contact/contact.component';
 import { HomeComponent } from './home/home.component';
+import { TravelguideComponent } from './travelguide/travelguide.component';
+import { BookingComponent } from './booking/booking.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import { HomeComponent } from './home/home.component';
     ZanzibarComponent,
     KilimanjaroComponent,
     ContactComponent,
-    HomeComponent
+    HomeComponent,
+    TravelguideComponent,
+    BookingComponent
   ],
   imports: [
     BrowserModule,
