@@ -1,1 +1,5 @@
 @import '../app.component.css';
+
+p a {
+    text-decoration: none;
+}
