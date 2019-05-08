@@ -21,6 +21,10 @@ const routes: Routes = [
       { path: 'zanzibar', loadChildren: '../zanzibar/zanzibar.module#ZanzibarModule' },
       { path: 'contact', loadChildren: '../contact/contact.module#ContactModule'},
       { path: 'guide', loadChildren: '../travelguide/travelguide.module#TravelguideModule'},
+      { path: 'safari', loadChildren: '../safari/safari.module#SafariModule'},
+      { path: 'accom', loadChildren: '../accomodation/accomodation.module#AccomodationModule'},
+      { path: 'climb', loadChildren: '../climbing/climbing.module#ClimbingModule'},
+      { path: 'about', loadChildren: '../about/about.module#AboutModule'},
       { path: 'book', loadChildren: '../booking/booking.module#BookingModule'}
 
     ]
