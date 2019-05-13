@@ -1,1 +1,12 @@
 @import '../app.component.css';
+
+.banner_inner_safari {
+    background: url(../../assets/lait_img/balloon_chserengeti.jpg) no-repeat center;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    -moz-background-size: cover;
+	min-height: 300px;
+}
+
