@@ -13,44 +13,39 @@
 		<div class="contact-grids">
 			<div class="row">
 				<div class="col-lg-7 contact-left-form">
-					<form action="#" method="post" class="row">
+					<form [formGroup]="bookForm" (ngSubmit)="onSubmit()" class="row">
 						<div class="col-sm-6 form-group contact-forms">
-						  <input type="text" class="form-control" placeholder="Name" required="">
+						  <input type="text" class="form-control" formControlName="name" placeholder="Name" >
 						</div>
 						<div class="col-sm-6 form-group contact-forms">
-						  <input type="email" class="form-control" placeholder="Email" required="">
+						  <input type="email" class="form-control" formControlName="email" placeholder="Email" >
 						</div>
 						<div class="col-sm-6 form-group contact-forms">
-						  <input type="text" class="form-control" placeholder="Phone" required=""> 
+						  <input type="tel" class="form-control" formControlName="phone" placeholder="Phone" > 
+						</div>
+						<div class="col-sm-6 form-group date contact-forms">
+							<input type="text" class="form-control date" name="date" formControlName="dateFrom" placeholder="From" >
+							<label for="date" class="input-group-addon btn"><span class="fa fa-calendar"></span></label>
+						</div>
+						<div class="col-sm-6 form-group date contact-forms">
+							<input type="text" class="form-control date" name="date" formControlName="dateTo" placeholder="From" > 
+							<label for="date" class="input-group-addon btn"><span class="fa fa-calendar"></span></label>
 						</div>
 						<div class="col-sm-6 form-group contact-forms">
-						  <input type="text" class="form-control" placeholder="Date" required=""> 
-						</div>
-						<div class="col-sm-6 form-group contact-forms">
-							<select class="form-control" id="adults">
-								<option>Adults</option>
-								<option>1</option>
-								<option>2</option>
-								<option>3</option>
-								<option>4</option>
-								<option>5 or more</option>
+							<select class="form-control" formControlName="adults" placeholder="Adults" role="adults" id="adults">
+								<option *ngFor="let adults of roles" [ngValue]="adults" >{{ adults }}</option>
 							</select>
 						</div>
 						<div class="col-sm-6 form-group contact-forms">
-							<select class="form-control" id="kids">
-								<option>Kids</option>
-								<option>1</option>
-								<option>2</option>
-								<option>3</option>
-								<option>4</option>
-								<option>5 or more</option>
+							<select class="form-control" formControlName="kids" placeholder="Kids" role="kids" id="kids">
+								<option *ngFor="let kids of roles" [ngValue]="kids" >{{ kids }}</option>
 							</select>
 						</div>
 						<div class="col-md-12 form-group contact-forms">
-						  <textarea class="form-control" placeholder="Message" rows="3" required=""></textarea>
+						  <textarea class="form-control" formControlName="message" placeholder="Message" rows="3" ></textarea>
 						</div>
 						<div class="col-md-12 booking-button">
-							<button class="btn btn-block sent-butnn">Book Now</button>
+							<button type="submit" class="btn btn-block sent-butnn" >Book Now</button>
 						</div>
 					</form>
 				</div>
@@ -70,4 +65,4 @@
 		</div>
 	</div>
 </section>
-<!-- //Booking -->
+<!-- //Booking  [disable]="!bookForm.valid"-->
