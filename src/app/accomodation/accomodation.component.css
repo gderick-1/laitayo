@@ -1,0 +1,17 @@
+@import '../app.component.css';
+
+.banner_inner_acco {
+    background: url(../../assets/lait_img/zbar.png) no-repeat center;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    -moz-background-size: cover;
+	min-height: 300px;
+}
+.cards-custom {
+   padding-top: 20px;
+}
+.acc-card {
+    height: 50vh;
+}
