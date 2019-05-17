@@ -14,11 +14,11 @@ export class BookingComponent implements OnInit {
     'name': ['', Validators.required],
     'email': ['', Validators.compose([
       Validators.required,
-  	  Validators.pattern('^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$')
+  	  // Validators.pattern('^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$')
     ])],
     'phone': ['', Validators.compose([
       Validators.required,
-  	  Validators.pattern('/^\+(?:[0-9] ?){6,14}[0-9]$/')
+  	  // Validators.pattern('/^\+(?:[0-9] ?){6,14}[0-9]$/')
     ])],
     'dateFrom': [''],
     'dateTo': [''],
