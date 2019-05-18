@@ -1,0 +1,11 @@
+@import '../app.component.css';
+
+.banner_inner_abt {
+    background: url(../../assets/lait_img/hotels/kbh-coctail.jpg) no-repeat center;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    -moz-background-size: cover;
+	min-height: 300px;
+}
