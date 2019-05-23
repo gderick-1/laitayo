@@ -7,9 +7,8 @@ import { FormBuilder, Validators } from '@angular/forms';
   styleUrls: ['./booking.component.css']
 })
 export class BookingComponent implements OnInit {
-  roles: Array<string> = [
-    'No','1', '2', '3', '4', '5 or more'
-  ];
+  showAction: boolean = true;
+ 
   bookForm = this.bookLaitayo.group({
     'name': ['', Validators.required],
     'email': ['', Validators.compose([
@@ -24,7 +23,7 @@ export class BookingComponent implements OnInit {
     'dateTo': [''],
     'message': ['', Validators.required],
     'adults': [''],
-    'kids': ['']
+    'child': ['']
   });
   
   constructor( private bookLaitayo: FormBuilder) {}

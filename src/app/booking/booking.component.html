@@ -15,12 +15,15 @@
 				<div class="col-lg-7 contact-left-form">
 					<form [formGroup]="bookForm" (ngSubmit)="onSubmit()" class="row">
 						<div class="col-sm-6 form-group contact-forms">
-						  <input type="text" class="form-control" formControlName="name" placeholder="Name" >
+							<div class="input-icon"><i class="fa fa-user book_form"></i></div>
+						    <input type="text" class="form-control" formControlName="name" placeholder="Name" >
 						</div>
 						<div class="col-sm-6 form-group contact-forms">
-						  <input type="email" class="form-control" formControlName="email" placeholder="Email" >
+							<div class="input-icon"><i class="fa fa-envelope book_form"></i></div>
+						  	<input type="email" class="form-control" formControlName="email" placeholder="Email" >
 						</div>
 						<div class="col-sm-6 form-group contact-forms">
+							<div class="input-icon"><i class="fa fa-phone book_form"></i></div>
 						  <input type="tel" class="form-control" formControlName="phone" placeholder="Phone" > 
 						</div>
 						<div class="col-sm-6 form-group date contact-forms">
@@ -29,18 +32,36 @@
 							<!-- <label for="date" class="input-group-addon"><span class="fa fa-calendar"></span></label> -->
 						</div>
 						<div class="col-sm-6 form-group date contact-forms">
-							<input type="text" class="form-control date" name="date" formControlName="dateTo" placeholder="Departure Date" > 
 							<div class="input-icon"><i class="fa fa-calendar book_form"></i></div>
+							<input type="text" class="form-control date" name="date" formControlName="dateTo" placeholder="Departure Date" > 
 						</div>
-						<div class="col-sm-6 form-group contact-forms">
-							<select class="form-control" formControlName="adults" placeholder="Adults" role="adults" id="adults">
-								<option *ngFor="let adults of roles" [ngValue]="adults" >{{ adults }}</option>
-							</select>
-						</div>
-						<div class="col-sm-6 form-group contact-forms">
-							<select class="form-control" formControlName="kids" placeholder="Kids" role="kids" id="kids">
-								<option *ngFor="let kids of roles" [ngValue]="kids" >{{ kids }}</option>
-							</select>
+						<div class="card col-sm-6">
+							<div class="card-header" id="ICollaptibleData"> 
+								<div class="input-icon"><i class="fa fa-users book_form-adults"></i></div>
+								<h4 class="text-center form-group contact-forms" data-toggle="collapse" data-target="#ICollapseMenu" aria-expanded="false" aria-controls="ICollapseMenu">
+									<!-- <button class="btn btn-warning" data-toggle="collapse" data-target="#ICollapseMenu" aria-expanded="false"
+									aria-controls="ICollapseMenu">Adults, Children</button> -->
+								{{adults}} Adults, {{child}} Children
+								</h4>
+							</div>
+							<div id="ICollapseMenu" class="collapse">
+								<div class="card card-body">
+									<div class="form-group contact-forms">
+										
+										<div class="input_box_count-book">
+											<label for="adults" class="form_label">Adults</label>
+											<input type="number" class="input_box_counter" formControlName="adults" name="adults" value="1" min="1" max="10" [(ngModel)]="adults" role="adults">
+										</div>
+									</div>
+
+									<div class="contact-forms form-group">
+										<div class="input_box_count-book">
+											<label for="children" class="form_label">Children</label>
+											<input type="number" class="input_box_counter" formControlName="child" name="children" value="0" min="0" max="10" [(ngModel)]="child" role="children">
+										</div>
+									</div>
+								</div>
+							</div>
 						</div>
 						<div class="col-md-12 form-group contact-forms">
 						  <textarea class="form-control" formControlName="message" placeholder="Message" rows="3" ></textarea>
