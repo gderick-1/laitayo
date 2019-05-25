@@ -12,32 +12,32 @@
     display: flex;
     position: absolute;
     justify-content: flex-end;
-    top: 60%;
+    top: 30%;
     left: 85%;
 }
-.input_box_count-book {
-    /* border: 1px solid rgba(119, 118, 118, 0.788); */
-    padding: 10px 0;
-    margin: 10px 0;
-}
+/* .input_box_count-book {
+    /* border: 1px solid rgba(119, 118, 118, 0.788); 
+    padding: 10px 10px;
+    margin: 10px 10px;
+} */
 .card {
     border: none;
     margin-bottom: 16px;
 }
-.card-header {
+/* .card-header {
     height: 50px;
-}
+} */
 .form_label {
     display: inline-block;
     margin-bottom: 0;
-    width: 60%;
+    width: 40%;
     line-height: 1;
 }
 .input_box_counter {
     position: relative;
     align-content: center;
     padding-right: 0;
-    width: 40%;
+    width: 60%;
 }
 input[type="number"].input_box_counter {
     border: none;

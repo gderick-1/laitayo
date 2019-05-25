@@ -16,58 +16,94 @@
 					<form [formGroup]="bookForm" (ngSubmit)="onSubmit()" class="row">
 						<div class="col-sm-6 form-group contact-forms">
 							<div class="input-icon"><i class="fa fa-user book_form"></i></div>
-						    <input type="text" class="form-control" formControlName="name" placeholder="Name" >
+								<input type="text" class="form-control" formControlName="name" name="name" placeholder="Name" >
+								<div class="alert alert-danger" *ngIf="bookForm.get('name').invalid && (bookForm.get('name').dirty || bookForm.get('name').touched)">
+									<div *ngIf="bookForm.get('name').errors.required">Name is required</div>
+									<!-- <div *ngIf="name.errors.minlength">
+										Name must be at least 4 characters long.
+									</div> -->
+								</div>
 						</div>
 						<div class="col-sm-6 form-group contact-forms">
 							<div class="input-icon"><i class="fa fa-envelope book_form"></i></div>
-						  	<input type="email" class="form-control" formControlName="email" placeholder="Email" >
+								<input type="email" class="form-control" formControlName="email" name="email"  placeholder="Email" >
+								<div class="alert alert-danger" *ngIf="bookForm.get('email').invalid && (bookForm.get('email').dirty || bookForm.get('email').touched)">
+									<div *ngIf="bookForm.get('email').errors.required">Email is required</div>
+									<div *ngIf="bookForm.get('email').errors.email">Please, Enter a valid email address</div>
+								</div>
 						</div>
 						<div class="col-sm-6 form-group contact-forms">
 							<div class="input-icon"><i class="fa fa-phone book_form"></i></div>
-						  <input type="tel" class="form-control" formControlName="phone" placeholder="Phone" > 
+							<input type="tel" class="form-control" formControlName="phone" name="phone" placeholder="Phone">
+							<div class="alert alert-danger" *ngIf="bookForm.get('phone').invalid && (bookForm.get('phone').dirty || bookForm.get('phone').touched)">
+								<div *ngIf="bookForm.get('phone').errors.required">Phone is required</div>
+								<div *ngIf="bookForm.get('phone').errors.pattern">Please, Enter a valid phone number</div>
+							</div>
 						</div>
 						<div class="col-sm-6 form-group date contact-forms">
-							<input type="text" class="form-control date" name="date" formControlName="dateFrom" placeholder="Arrival Date" >
+							<input type="date" class="form-control date" name="date" formControlName="dateFrom" placeholder="Arrival Date" >
 							<div class="input-icon"><i class="fa fa-calendar book_form"></i></div>
-							<!-- <label for="date" class="input-group-addon"><span class="fa fa-calendar"></span></label> -->
+							<div class="alert alert-danger" *ngIf="bookForm.get('dateFrom').invalid && (bookForm.get('dateFrom').dirty || bookForm.get('dateFrom').touched)">
+								<div *ngIf="bookForm.get('dateFrom').errors.required">Arrival date is required</div>
+								<!-- <div *ngIf="bookForm.get('dateFrom').errors.pattern">Enter a valid date</div> -->
+							</div>
 						</div>
 						<div class="col-sm-6 form-group date contact-forms">
 							<div class="input-icon"><i class="fa fa-calendar book_form"></i></div>
-							<input type="text" class="form-control date" name="date" formControlName="dateTo" placeholder="Departure Date" > 
+							<input type="date" class="form-control date" name="date" formControlName="dateTo" placeholder="Departure Date" >
+							<div class="alert alert-danger" *ngIf="bookForm.get('dateTo').invalid && (bookForm.get('dateTo').dirty || bookForm.get('dateTo').touched)">
+								<div *ngIf="bookForm.get('dateTo').errors.required">Date is required</div>
+								<!-- <div *ngIf="bookForm.get('dateTo').errors.pattern">Enter a valid date</div> -->
+							</div>
 						</div>
 						<div class="card col-sm-6">
-							<div class="card-header" id="ICollaptibleData"> 
-								<div class="input-icon"><i class="fa fa-users book_form-adults"></i></div>
-								<h4 class="text-center form-group contact-forms" data-toggle="collapse" data-target="#ICollapseMenu" aria-expanded="false" aria-controls="ICollapseMenu">
-									<!-- <button class="btn btn-warning" data-toggle="collapse" data-target="#ICollapseMenu" aria-expanded="false"
-									aria-controls="ICollapseMenu">Adults, Children</button> -->
+							<!-- <div class="card-header" id="ICollaptibleData">  -->
+								<!-- <div class="input-icon"><i class="fa fa-users book_form-adults"></i></div> -->
+								<p class="text-justify form-group contact-forms input-icon" data-toggle="collapse" data-target="#ICollapseMenu" aria-expanded="false" aria-controls="ICollapseMenu">
+									
 								{{adults}} Adults, {{child}} Children
-								</h4>
-							</div>
+								<i class="fa fa-users book_form-adults"></i>
+								</p>
+							<!-- </div> -->
 							<div id="ICollapseMenu" class="collapse">
 								<div class="card card-body">
 									<div class="form-group contact-forms">
-										
 										<div class="input_box_count-book">
 											<label for="adults" class="form_label">Adults</label>
-											<input type="number" class="input_box_counter" formControlName="adults" name="adults" value="1" min="1" max="10" [(ngModel)]="adults" role="adults">
+											<input type="number" class="input_box_counter" formControlName="adults"  name="adults" value="1" min="1" max="10" [(ngModel)]="adults" role="adults">
+											<div class="alert alert-danger" *ngIf="bookForm.get('adults').invalid && (bookForm.get('adults').dirty || bookForm.get('adults').touched)">
+												<div *ngIf="bookForm.get('adults').errors.required">Enter number of Adults</div>
+												<!-- <div *ngIf="name.errors.minlength">
+													Name must be at least 4 characters long.
+												</div> -->
+											</div>
 										</div>
 									</div>
 
 									<div class="contact-forms form-group">
 										<div class="input_box_count-book">
 											<label for="children" class="form_label">Children</label>
-											<input type="number" class="input_box_counter" formControlName="child" name="children" value="0" min="0" max="10" [(ngModel)]="child" role="children">
+											<input type="number" class="input_box_counter" formControlName="child"  name="children" value="0" min="0" max="10" [(ngModel)]="child" role="children">
+											<div class="alert alert-danger" *ngIf="bookForm.get('child').invalid && (bookForm.get('child').dirty || bookForm.get('child').touched)">
+												<div *ngIf="bookForm.get('child').errors.required">Name is required</div>
+												<!-- <div *ngIf="name.errors.minlength">
+													Name must be at least 4 characters long.
+												</div> -->
+											</div>
 										</div>
 									</div>
 								</div>
 							</div>
 						</div>
 						<div class="col-md-12 form-group contact-forms">
-						  <textarea class="form-control" formControlName="message" placeholder="Message" rows="3" ></textarea>
+						  <textarea class="form-control" formControlName="message"  placeholder="Message" rows="3" ></textarea>
+						  <div class="alert alert-danger" *ngIf="bookForm.get('message').invalid && (bookForm.get('message').dirty || bookForm.get('message').touched)">
+							<div *ngIf="bookForm.get('message').errors.required">Please, Leave a message</div>
+							<div *ngIf="bookForm.get('message').errors.maxlength">Maximum of 350 words </div>
+						</div>
 						</div>
 						<div class="col-md-12 booking-button">
-							<button type="submit" class="btn btn-block sent-butnn" >Book Now</button>
+							<button type="submit" class="btn btn-block sent-butnn"  >Book Now</button>
 						</div>
 					</form>
 				</div>
@@ -88,3 +124,4 @@
 	</div>
 </section>
 <!-- //Booking  [disable]="!bookForm.valid"-->
+<!-- [ngClass]="{'is-invalid': submitted && Laitayo.adults.errors}" form validation ngclass -->

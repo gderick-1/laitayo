@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, Validators} from '@angular/forms';
+import { FormBuilder, Validators, FormGroup, FormControl} from '@angular/forms';
+
+import { emailValidator, phoneValidator } from "../helpers/email.helper";
 
 @Component({
   selector: 'app-contact',
@@ -7,24 +9,71 @@ import { FormBuilder, Validators} from '@angular/forms';
   styleUrls: ['./contact.component.css']
 })
 export class ContactComponent implements OnInit {
-  contactForm = this.fbLaitayo.group({
-    'name': [''],
-    'email': ['',  Validators.compose([
-      Validators.required,
-  	  // Validators.pattern('^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$')
-    ])],
-    'phone': ['', Validators.compose([
-      Validators.required,
-  	  // Validators.pattern('/^\+(?:[0-9] ?){6,14}[0-9]$/')
-    ])],
-    'message': ['']
-  });
-  
+  emailValidator =  emailValidator;
+  phoneValidator = phoneValidator;
+  contactForm: FormGroup;
+  submitted = false;
   constructor( private fbLaitayo: FormBuilder) {}
-  ngOnInit() {}
+
+  ngOnInit() {
+    this.contactForm = this.fbLaitayo.group({
+      name: new FormControl(
+        '', [
+            Validators.required,
+            Validators.minLength(4)
+      ]),
+      email: new FormControl(
+        '',
+            Validators.compose([
+              Validators.required,
+              Validators.pattern(this.emailValidator)
+            ])
+      ),
+      phone:  new FormControl(
+        null,
+           Validators.compose([
+             Validators.required, 
+             Validators.pattern(this.phoneValidator)
+            ])
+      ),
+      message: new FormControl(
+      '', 
+        Validators.compose([
+          Validators.required, 
+          Validators.maxLength(350)
+      ])
+     )
+    });
+  }
+  // get method for convinience access of form fields
+  // get Laitayo() {
+  //   return this.contactForm.controls;
+  // }
+  
+  get name(){
+    return this.contactForm.get('name');
+  }
+
+  get email(){
+    return this.contactForm.get('email');
+  }
+
+  get phone(){
+    return this.contactForm.get('phone');
+  }
+  get message(){
+    return this.contactForm.get('message');
+  }
   onSubmit(){
     // display form values when submit button clicked
-    console.warn(this.contactForm.value);
+    this.submitted = true;
+    // stop here if form is invalid
+    if (this.contactForm.invalid) {
+      return;
+  }
+
+  // alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.contactForm.value));
+  console.warn(this.contactForm.value);
   }
 
 }
