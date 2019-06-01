@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators, FormGroup, FormControl} from '@angular/forms';
-
+import { Subscription } from 'rxjs';
 import { emailValidator, phoneValidator } from "../helpers/email.helper";
+import { AngularFireDatabase } from '@angular/fire/database';
+import { ContactService } from '../service/contact.service';
 
 @Component({
   selector: 'app-contact',
@@ -13,7 +15,8 @@ export class ContactComponent implements OnInit {
   phoneValidator = phoneValidator;
   contactForm: FormGroup;
   submitted = false;
-  constructor( private fbLaitayo: FormBuilder) {}
+  registered = false;
+  constructor(  private cdb: AngularFireDatabase,private fbLaitayo: FormBuilder, private contactService: ContactService) {}
 
   ngOnInit() {
     this.contactForm = this.fbLaitayo.group({
@@ -65,14 +68,38 @@ export class ContactComponent implements OnInit {
     return this.contactForm.get('message');
   }
   onSubmit(){
-    // display form values when submit button clicked
     this.submitted = true;
-    // stop here if form is invalid
-    if (this.contactForm.invalid) {
+    if(this.contactForm.invalid == true){
       return;
-  }
+    } else {
+      this.registered = true;
+    }
+  //   const contForm = this.contactForm.value;
+  //   const name = contForm.name;
+  //   const email = contForm.email;
+  //   const phone = contForm.phone;
+  //   const message = contForm.message;
+
+  //   let contactRequest = { name, email, phone, message}
+
+  //   this.cdb.list('/message').push(contactRequest);
+  //   CForm.reset();
+  //   // display form values when submit button clicked
+  //   this.submitted = true;
+    
+  //   // stop here if form is invalid
+  //   if (this.contactForm.invalid) {
+  //     return;
+  // }
 
   // alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.contactForm.value));
+  // console.log(this.contactForm.value);
+  this.contactService.sendContacts(this.contactForm.value).subscribe(() =>{
+    alert('Your message has been sent successful');
+    this.contactForm.reset();
+  }, error => {
+    console.error('ERROR:', error);
+  });
   console.warn(this.contactForm.value);
   }
 

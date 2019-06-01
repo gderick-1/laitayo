@@ -49,7 +49,7 @@
 						<form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
 							<div class=" form-group contact-forms">
 								<input type="text" class="form-control" formControlName="name" placeholder="Name">
-								<div class="alert alert-danger" *ngIf="contactForm.get('name').invalid && (contactForm.get('name').dirty || contactForm.get('name').touched)">
+								<div class="invalid-feedback" *ngIf="contactForm.get('name').invalid && (contactForm.get('name').dirty || contactForm.get('name').touched)">
 									<div *ngIf="name.errors.required">Name is required</div>
 									<div *ngIf="name.errors.minlength">
 										Name must be at least 4 characters long.
@@ -58,27 +58,27 @@
 							</div>
 							<div class="form-group contact-forms">
 							  <input type="email" class="form-control" formControlName="email" placeholder="Email">
-								<div class="alert alert-danger" *ngIf="contactForm.get('email').invalid && (contactForm.get('email').dirty || contactForm.get('email').touched)">
+								<div class="invalid-feedback" *ngIf="contactForm.get('email').invalid && (contactForm.get('email').dirty || contactForm.get('email').touched)">
 									<div *ngIf="contactForm.get('email').errors.required">Email is required</div>
 									<div *ngIf="contactForm.get('email').errors.pattern">Please, Enter a valid email address</div>
 								</div>
 							</div>
 							<div class="form-group contact-forms">
 								<input type="tel" class="form-control" formControlName="phone" placeholder="Phone">
-								<div class="alert alert-danger" *ngIf="contactForm.get('phone').invalid && (contactForm.get('phone').dirty || contactForm.get('phone').touched)">
+								<div class="invalid-feedback" *ngIf="contactForm.get('phone').invalid && (contactForm.get('phone').dirty || contactForm.get('phone').touched)">
 									<div *ngIf="contactForm.get('phone').errors.required">Phone number is required</div>
 									<div *ngIf="contactForm.get('phone').errors.pattern">Please, Enter a valid phone number</div>
 								</div>
 							</div>
 							<div class="form-group contact-forms">
 							  <textarea class="form-control" formControlName="message"  placeholder="Message" rows="5" ></textarea>
-								<div class="alert alert-danger" *ngIf="contactForm.get('message').invalid && (contactForm.get('message').dirty || contactForm.get('message').touched) ">
+								<div class="invalid-feedback" *ngIf="contactForm.get('message').invalid && (contactForm.get('message').dirty || contactForm.get('message').touched) ">
 									<div *ngIf="contactForm.get('message').errors.required">Please, Leave a message</div>
 									<div *ngIf="contactForm.get('message').errors.maxlength">There must be maximum of 350 words</div>
 									<!-- <div *ngIf="Laitayo.message.value.length => 350 && Laitayo['message']?.touched">Enter maximum of 350 words</div> -->
 								</div>
 							</div>
-							<button type="submit" class="btn btn-block sent-butnn">Send</button>
+							<button type="submit" class="btn btn-block sent-butnn" [disabled]="!contactForm.valid">Send</button>
 						</form>
 					</div>
 					<div class="col-lg-6 col-md-6 contact-right pl-lg-5">
@@ -94,4 +94,4 @@
 			</div>
 	</div>
 </section>
-<!-- //Contact [disable]="!contactForm.valid" [ngClass]="{'is-invalid': submitted && Laitayo.message.errors}"-->
+<!-- //Contact [disabled]="!contactForm.valid" [ngClass]="{'is-invalid': submitted && Laitayo.message.errors}"-->
