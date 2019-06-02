@@ -46,7 +46,10 @@ testem.log
 Thumbs.db
 
 # firebase files
-.firebaserc
-database.*
-firebase.json
-/functions
+#.firebaserc
+#database.*
+#firebase.json
+#/functions
+
+# environments files
+/src/environments/environment.*
