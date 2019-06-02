@@ -74,16 +74,16 @@ export class ContactComponent implements OnInit {
     } else {
       this.registered = true;
     }
-  //   const contForm = this.contactForm.value;
-  //   const name = contForm.name;
-  //   const email = contForm.email;
-  //   const phone = contForm.phone;
-  //   const message = contForm.message;
+    const contForm = this.contactForm.value;
+    const name = contForm.name;
+    const email = contForm.email;
+    const phone = contForm.phone;
+    const message = contForm.message;
 
-  //   let contactRequest = { name, email, phone, message}
+    let contactRequest = { name, email, phone, message}
 
-  //   this.cdb.list('/message').push(contactRequest);
-  //   CForm.reset();
+    this.cdb.list('/users').push(contactRequest);
+    this.contactForm.reset();
   //   // display form values when submit button clicked
   //   this.submitted = true;
     
@@ -94,13 +94,13 @@ export class ContactComponent implements OnInit {
 
   // alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.contactForm.value));
   // console.log(this.contactForm.value);
-  this.contactService.sendContacts(this.contactForm.value).subscribe(() =>{
-    alert('Your message has been sent successful');
-    this.contactForm.reset();
-  }, error => {
-    console.error('ERROR:', error);
-  });
-  console.warn(this.contactForm.value);
+  // this.contactService.sendContacts(this.contactForm.value).subscribe(() =>{
+  //   alert('Your message has been sent successful');
+  //   this.contactForm.reset();
+  // }, error => {
+  //   console.error('ERROR:', error);
+  // });
+  // console.warn(this.contactForm.value);
   }
 
 }
