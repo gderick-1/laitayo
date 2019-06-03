@@ -21,7 +21,7 @@ exports.addMessage = functions.https.onRequest(async (req, res) => {
 
 const gmailEmail = encodeURIComponent(functions.config().gmail.email);
 const gmailPassword = encodeURIComponent(functions.config().gmail.password);
-const mailTransport = nodemailer.createTransport(`smtps://${gmailEmail}:${gmailPassword}@smptp.gmail.com`);
+const mailTransport = nodemailer.createTransport(`smtps://${gmailEmail}:${gmailPassword}@smtp.gmail.com`);
 
 //submit booking notice from booking components
 exports.sendContactMessage = functions.database.ref('/booking/{pushKey}').onWrite((change) =>{
@@ -58,14 +58,14 @@ exports.sendContactMessage = functions.database.ref('/booking/{pushKey}').onWrit
 
 // Take the text parameter passed to this HTTP endpoint and insert it into the
 // Realtime Database under the path /messages/:pushId/original
-// exports.addMessage = functions.https.onRequest(async (req, res) => {
-//     // Grab the text parameter.
-//     const original = req.query.text;
-//     // Push the new message into the Realtime Database using the Firebase Admin SDK.
-//     const snapshot = await admin.database().ref('/users').push({original: original});
-//     // Redirect with 303 SEE OTHER to the URL of the pushed object in the Firebase console index.js.
-//     res.redirect(303, snapshot.ref.toString());
-//   });
+exports.addMessage = functions.https.onRequest(async (req, res) => {
+    // Grab the text parameter.
+    const original = req.query.text;
+    // Push the new message into the Realtime Database using the Firebase Admin SDK.
+    const snapshot = await admin.database().ref('/users').push({original: original});
+    // Redirect with 303 SEE OTHER to the URL of the pushed object in the Firebase console index.js.
+    res.redirect(303, snapshot.ref.toString());
+  });
 
 // contact us for  detailed service worksheet
 exports.sendContactMessage = functions.database.ref('/users/{pushKey}').onWrite((contact) =>{
