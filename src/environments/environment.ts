@@ -4,22 +4,6 @@
 
 export const environment = {
   production: false,
-
-  firebase: {
-    apiKey: "AIzaSyC6vBsTdRINRETAZRA-d-gWs-5-90DzcHs",
-    authDomain: "laitayo-1555925501939.firebaseapp.com",
-    databaseURL: "https://laitayo-1555925501939.firebaseio.com",
-    projectId: "laitayo-1555925501939",
-    storageBucket: "laitayo-1555925501939.appspot.com",
-    messagingSenderId: "377889886670",
-    appId: "1:377889886670:web:8a37b2874f21ce46"
-   
-  },
-  details: {
-    email: 'laitayo.tours@gmail.com',
-    pass: 'L@!taY0tour`'
-  }
-
 };
 
 /*
