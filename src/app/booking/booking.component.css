@@ -2,53 +2,49 @@
     display: flex;
     position: absolute;
     justify-content: flex-end;
-    top: 30%;
+    top: 25%;
     left: 85%;
 }
-/* h4 {
-    font-size: small;
+
+/* .col-sm-4.input_child_adult, .col-sm-8.input_child_adult{
+    margin: 10px 10px;
+    clear: both;
+    float: left;
 } */
 .book_form-adults {
     display: flex;
     position: absolute;
     justify-content: flex-end;
-    top: 30%;
+    top: 10%;
     left: 85%;
 }
-/* .input_box_count-book {
-    /* border: 1px solid rgba(119, 118, 118, 0.788); 
-    padding: 10px 10px;
-    margin: 10px 10px;
-} */
-.card {
-    border: none;
-    margin-bottom: 16px;
+.peop {
+    font-size: 14px;
+    text-align: center;
+    padding-left: 10px;
 }
-/* .card-header {
-    height: 50px;
-} */
+
 .form_label {
-    display: inline-block;
-    margin-bottom: 0;
-    width: 40%;
-    line-height: 1;
+    display: flex;
+    font-size: 14px;
+    width: 50%;
+    text-align: right;
+    clear: both;
+    float: left;
 }
 .input_box_counter {
-    position: relative;
-    align-content: center;
-    padding-right: 0;
-    width: 60%;
+    width: 50%;
+    position: absolute;
+    text-align: center; 
 }
-input[type="number"].input_box_counter {
-    border: none;
-    background-color: transparent;
-    padding: 0 15px;
-    display: inline-block;
-    text-align: right;
-    max-width: 100px;
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    margin: 10px;
+    background-color: #047ffc;
+    opacity: 1;
 }
 .fa-users, .fa-calendar , .btn-warning,
  .fa-user, .fa-envelope,
-.fa-name, .fa-phone{
+.fa-name, .fa-phone {
     color: rgba(119, 118, 118, 0.788);
 }
