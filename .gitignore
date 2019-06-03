@@ -52,4 +52,5 @@ Thumbs.db
 #/functions
 
 # environments files
-/src/environments/environment.*
+*/src/environments/**
+debug.log
