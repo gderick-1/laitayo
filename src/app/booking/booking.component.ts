@@ -99,6 +99,9 @@ export class BookingComponent implements OnInit, OnDestroy {
             Validators.required
       )
     });
+
+    this.bookForm.patchValue({child:null});
+    this.bookForm.patchValue({adults:null});
   }
 
   get name(){
@@ -130,13 +133,14 @@ export class BookingComponent implements OnInit, OnDestroy {
   //   return this.bookForm.controls;
   // }
  
-
+  // bookForm.setValue('child');
   onSubmit(){
     this.submitted = true;
     if (this.bookForm.invalid == true) {
       return;
     } else {
       this.registered = true;
+      // this.bookForm.setValue();
     }
     // form: FormGroup
     const  bookform = this.bookForm.value;
